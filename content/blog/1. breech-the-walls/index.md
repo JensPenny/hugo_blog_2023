@@ -1,17 +1,23 @@
 ---
 title: "Breech"
 description: "Doing weird exercises, praying they work"
-createdAt: "2021-07-22"
-coverimg: "/breech-the-walls/roulette.jpg"
+date: "2021-07-22"
+slug: "breech-the-walls"
 draft: false
 tags:
   - dadbod
+cover:
+  image: "images/roulette.jpg" # image path/url
+  alt: "A roulette wheel. Rien ne vas plus" # alt text
+  # caption: "" # display caption under cover
+  # relative: true # when using page bundles set this to true
+  # hidden: false # only hide on current single page
 ---
 
 Me and my partner are expecting our first baby soon. Until now, we passed a couple of very important goalposts.<!--more-->  
-We didn't get a miscarriage the first three months  
-Everything looks fine, and the baby is growing well  
-We progressed out of the moment that the baby actually has functioning lungs
+We didn't get a miscarriage the first three months.  
+Everything looks fine, and the baby is growing well.  
+We progressed out of the moment that the baby actually has functioning lungs.
 
 While the realization that there is _plenty_ that can go wrong later, reaching these goals still feels like a small morsel of hope added, and they all feel significant, especially the first time.  
 There is just one thing this baby won't do.  
