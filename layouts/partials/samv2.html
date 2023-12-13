@@ -1,0 +1,76 @@
+<!-- Todo CSS styling -->
+<script>
+    function s3NSResolver() {
+        return "http://s3.amazonaws.com/doc/2006-03-01/";
+    }
+
+    (async () => {
+        let parser = new window.DOMParser();
+        let samRecords = [];
+
+        const fetchS3Bucket = await fetch(`https://samv2.ams3.digitaloceanspaces.com/`)
+            .then((response) => response.text())
+            .then((text) => text)
+            .catch((error) => console.log(error));
+
+        if (fetchS3Bucket) {
+            const xmlDoc = parser.parseFromString(fetchS3Bucket, "text/xml");
+
+            try {
+                const xpathResult = xmlDoc.evaluate("//ns:Contents", xmlDoc, s3NSResolver, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+
+                for (let i = 0; i < xpathResult.snapshotLength; i++) {
+                    const node = xpathResult.snapshotItem(i);
+                    if (node) {
+                        const samRecord = {
+                            "key": node.childNodes.item(0).textContent,
+                            "lastModified": node.childNodes.item(1).textContent,
+                            "size": parseInt(node.childNodes.item(3).textContent),
+                        }
+                        samRecords.push(samRecord);
+                    }
+                }
+            } catch (e) {
+                console.log(e)
+            }
+        }
+
+        //Reverse the list
+        samRecords = samRecords.reverse();
+        //samRecords = samRecords.slice(0, 20); //Remove for all
+
+        //Let's create the page
+        div = document.createElement('div');
+
+        div.append(...samRecords.map(rec => {
+            let single = document.createElement('div');
+            let link = document.createElement('a');
+            link.href = "https://samv2.ams3.digitaloceanspaces.com/" + rec.key;
+            link.textContent = rec.key;
+            single.append(link);
+
+            let paragraph = document.createElement('p');
+            paragraph.textContent = `Last modified: ${new Date(rec.lastModified).toISOString().split('T')[0]}\n
+            Size: ${(rec.size / 1024 / 1024).toFixed(2)} Mb\n`;
+            single.append(paragraph);
+            return single;
+        }));
+
+        let container = document.getElementById('sam_container');
+        container.append(div);
+
+    })();
+</script>
+<noscript>Fetching the Samv2 SQL lite files from the S3 bucket requires JavaScript enabled</noscript>
+
+<html>
+
+<body>
+    <div>
+        <h1>Sam V2 SQLite Exports</h1>
+        <div id="sam_container">
+        </div>
+    </div>
+</body>
+
+</html>
