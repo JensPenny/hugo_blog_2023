@@ -1,5 +1,6 @@
 ---
 title: "Battlestations"
+slug: "battlestations"
 description: "Our diaper changing station setup"
 date: "2021-08-26"
 draft: false
