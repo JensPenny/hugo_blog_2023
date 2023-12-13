@@ -1,4 +1,4 @@
-baseURL: "https://examplesite.com/"
+baseURL: "https://jens-blog-4mipw.ondigitalocean.app/"
 title: Personal blog
 paginate: 5
 theme: PaperMod
@@ -16,7 +16,7 @@ minify:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: ExampleSite
+  title: Personal blog
   description: "Personal blog for Jens"
   keywords: [Blog, Portfolio, PaperMod]
   author: Jens Penny
@@ -59,7 +59,7 @@ params:
   # profile-mode - shows a central picture
   profileMode:
     enabled: false # needs to be explicitly set
-    title: ExampleSite
+    title: Personal blog
     subtitle: "This is subtitle"
     imageUrl: "<img location>"
     imageWidth: 120
@@ -114,18 +114,18 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: categories
-      name: categories
-      url: /categories/
-      weight: 10
+    # - identifier: categories
+    #   name: categories
+    #   url: /categories/
+    #   weight: 10
     - identifier: tags
       name: tags
       url: /tags/
       weight: 20
-    - identifier: example
-      name: example.org
-      url: https://example.org
-      weight: 30
+    # - identifier: example
+    #   name: example.org
+    #   url: https://example.org
+    #   weight: 30
     - identifier: samv2
       name: SamV2->SQL
       url: /samv2/
