@@ -1,11 +1,10 @@
 ---
-title: "My post"
-description: "Desc Text."
-date: "2020-09-15"
-slug: "without-the-number"
+title: "DNS woes"
+description: "Ancient technology"
+date: "2023-12-14"
+slug: "dns-woes"
 tags:
   - "devbot"
-  - "dadbod"
 draft: true
 
 showToc: true
