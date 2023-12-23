@@ -1,6 +1,6 @@
 ---
 title: "Thoughts on Diataxis"
-description: "Ancient technology"
+description: "Bringing order to chaos"
 date: "2023-12-23"
 slug: "diataxis-thoughts"
 tags:
