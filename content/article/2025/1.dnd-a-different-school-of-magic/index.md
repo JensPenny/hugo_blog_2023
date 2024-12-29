@@ -1,11 +1,11 @@
 ---
 title: "A Different School of Magic"
 description: "A dnd oneshot for levels 3-5"
-date: "2024-12-29"
+date: "2024-12-28"
 slug: "different-school-of-magic"
 tags:
-  - "devbot"
-#  - "dnd"
+  - "dadbod"
+  - "dnd"
 draft: false
 showToc: true
 TocOpen: false

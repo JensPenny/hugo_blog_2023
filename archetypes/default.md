@@ -1,13 +1,12 @@
 ---
-title: '{{ replace .File.ContentBaseName "-" " " | title }}'
+title: "{{ replace .File.ContentBaseName "-" " " | title }}"
 description: "Desc Text."
-date: '{{ time.Now.Format "2006-01-02" }}'
+date: "{{ time.Now.Format "2006-01-02" }}"
 slug: "without-the-number"
 tags:
   - "devbot"
   - "dadbod"
 draft: true
-
 showToc: true
 TocOpen: false
 hidemeta: false
