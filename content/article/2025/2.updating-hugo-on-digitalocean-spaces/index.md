@@ -75,3 +75,35 @@ The `hugo:exts` image has a lot of extra's like postCSS also included, so this s
 
 ## Deploying the dockerfile
 
+`git push` your changes to a repository. 
+Since you can't change the deploy system for an app, we'll have to create a new one.
+
+If the dockerfile was uploaded correctly, you should have the following resources:
+![edit resources](images/1.edit-resources.png)
+
+This is going to sound weird, but we are going to delete the static site that will be auto-detected as hugo, and we are going to change the web service so that it becomes a static site.
+The reason for this is that the existence of a dockerfile creates the default service.
+In this case, we are going to use the dockerfile to build the static site, not to deploy a service. 
+
+![edit resource type](images/2.edit-resource-type.png)
+
+Change the resource type from service to static site.
+Then, change the output directory to `/src/public`. 
+The `public` part is where Hugo will build the site.
+The `src` part is required since that is where we copy our files to in the dockerfile itself.
+
+![change output directory](images/3.output-directory.png)
+
+The HTTP request route can just be '/' as well, if it's only this blog in the digitalocean app.
+
+There should be nothing else to set up.
+The last important step here is to check the billing, which should be a cool 0.00 for a static site.
+![billing overview](images/4.billing-overview.png)
+
+## More links
+
+- [hugomods](https://blog.hugomods.com/posts/2024/01/deploy-hugo-static-sites-on-digitalocean-app-platform-via-docker/) has a more concise version of this post.
+I just found out after writing this though, so I figured I'd just post this. 
+- [This is a digitalocean referral link](https://m.do.co/c/b32e87be711c) if anyone wants to try.
+Referrals give you (the clicker) $200 dollars in credits for 60 days. 
+They provide me with $25 when someone actually buys in for a month.
