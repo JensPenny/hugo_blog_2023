@@ -1,4 +1,3 @@
-baseURL: "https://blog.jens.omg.lol"
 title: Personal blog
 pagination.pagerSize: 5
 theme: PaperMod
