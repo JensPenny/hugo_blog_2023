@@ -1,6 +1,6 @@
 title: Personal blog
 pagination.pagerSize: 5
-theme: PaperMod
+theme: ["hugo-admonitions", "PaperMod"]
 
 enableRobotsTXT: true
 buildDrafts: false
