@@ -59,7 +59,7 @@ params:
   profileMode:
     enabled: false # needs to be explicitly set
     title: Personal blog
-    subtitle: "This is subtitle"
+    subtitle: ""
     imageUrl: "<img location>"
     imageWidth: 120
     imageHeight: 120
