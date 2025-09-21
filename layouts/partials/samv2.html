@@ -8,7 +8,7 @@
         let parser = new window.DOMParser();
         let samRecords = [];
 
-        const fetchS3Bucket = await fetch(`https://samv2.ams3.digitaloceanspaces.com/`)
+        const fetchS3Bucket = await fetch(`https://samv2.s3.rbx.io.cloud.ovh.net/`)
             .then((response) => response.text())
             .then((text) => text)
             .catch((error) => console.log(error));
@@ -45,7 +45,7 @@
         div.append(...samRecords.map(rec => {
             let single = document.createElement('div');
             let link = document.createElement('a');
-            link.href = "https://samv2.ams3.digitaloceanspaces.com/" + rec.key;
+            link.href = "https://samv2.s3.rbx.io.cloud.ovh.net/" + rec.key;
             link.textContent = rec.key;
             single.append(link);
 
